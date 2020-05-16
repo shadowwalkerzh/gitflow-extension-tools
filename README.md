@@ -6,8 +6,7 @@
 
 #### How to Install?
 - Step1: download `gitflow-npm/gffn.sh` file into your local directory 
-- Step2: download `gitflow-npm/install.sh` file into the same directory as `gitflow-npm/gffn.sh`
-- Step3: execute `./install.sh`
+- Step2: `ln -sfn "$(pwd)/gffn.sh" /usr/local/bin/gffn`
 
 #### How to use `gffn` to mange your node project version?
 

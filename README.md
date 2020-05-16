@@ -5,7 +5,7 @@
 > This is a tool for integrating git flow with node to manage your project branches and versions, it's extended from two basic tools `git flow` and `npm version`. 
 
 #### How to Install?
-- Step1: download `gitflow-npm/gffn.sh` file into your local directory 
+- Step1: download `gitflow-npm/gffn.sh` file into your local directory and add execution permission `chmod +x gffn.sh` 
 - Step2: `ln -sfn "$(pwd)/gffn.sh" /usr/local/bin/gffn`
 
 #### How to use `gffn` to mange your node project version?

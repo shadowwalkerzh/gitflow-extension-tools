@@ -1,5 +1,5 @@
 ## gitflow-extension-tools
-> Extension tools for different developing languages like Java, Node, Python...
+> Manage the branches and versions for your projects (Java/Node/Python...) based on extended gitflow workflow ...
 
 ### Gitflow for node
 > This is a tool for integrating git flow with node to manage your project branches and versions, it's extended from two basic tools `git flow` and `npm version`. 

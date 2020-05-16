@@ -29,3 +29,47 @@
     - start a hotfix branch with a new patch version: `gffn -hs`
     - commit your changes including the version number: `git commit -am 'start a hotfix'`, `git push origin {hotfix/branch name}`
     - finish a hotfix branch: `gffn -hf`; this action will merge current hotfix branch into develop and master branch, and delete the hotfix branch from local and remote repository.
+
+#### What will it do when starting a new branch(feature/release/hotfix)?
+- feature
+    - create a new branch with prefix `feature/`
+    - switch to this feature branch
+    - update current version to next patch version
+
+- release
+    - create a new branch with prefix `release/`
+    - switch to this release branch
+    - update current version to next minor/major version
+
+- hotfix
+    - create a new branch with prefix `hotfix/`
+    - switch to this hotfix branch
+    - update current version to next minor/major version
+
+#### What will it do when finishing a new branch(feature/release/hotfix)?
+- feature
+    - validate current feature branch
+    - merge to develop branch
+    - fast commit changes
+    - push changes to remote develop branch
+    - delete current feature in local and remote repository
+
+- release
+    - validate current release branch
+    - merge current release branch to master branch
+    - fast commit changes
+    - create new tag with current version number from current release branch
+    - merge current tag into develop branch
+    - push local develop changes to remote develop branch
+    - push local master changes to remote master branch
+    - delete current release in local and remote repository
+
+- hotfix
+    - validate current hotfix branch
+    - merge current hotfix branch to master branch
+    - fast commit changes
+    - create new tag with current version number from current hotfix branch
+    - merge current tag into develop branch
+    - push local develop changes to remote develop branch
+    - push local master changes to remote master branch
+    - delete current hotfix in local and remote repository

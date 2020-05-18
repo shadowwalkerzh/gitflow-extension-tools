@@ -163,3 +163,10 @@
 - create a feature branch and update to next feature version: `gffpy -fs`
 - push changes to remote branch: `git push origin {feature/feature_branch}`
 - finish feature branch: `gffpy -ff`
+
+
+#### References
+
+- [npm version](https://docs.npmjs.com/cli/version)
+- [bumpversion](https://github.com/peritus/bumpversion)
+- [git-flow](https://github.com/nvie/gitflow)

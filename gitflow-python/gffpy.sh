@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# git-flow for node
+# git-flow for python
 
 MASTER_BRANCH='master'
 DEVELOP_BRANCH='develop'
@@ -95,7 +95,7 @@ get_current_branch() {
 }
 
 get_current_version() {
-  current_version=$(node --print "require('./package.json').version")
+  current_version=$(head -n 1 __version__.py | cut -d '=' -f 2 | xargs)
   echo "current version is: $current_version"
 }
 
@@ -173,16 +173,7 @@ merge() {
 
 update_pkg_version() {
   local NEW_VERSION=$1
-  npm version --no-git-tag-version $NEW_VERSION
-}
-
-init_config() {
-  npm config set tag-version-prefix ""
-  npm config set git-tag-version true
-}
-
-init_npm() {
-  npm init --yes
+  bumpversion $NEW_VERSION
 }
 
 init_git() {
@@ -190,7 +181,6 @@ init_git() {
 }
 
 init_project() {
-  init_npm
   local CURRENT_VERSION=$(get_current_version)
   init_git
   commit "Init commit"
@@ -328,11 +318,10 @@ show_help() {
 
 main () {
   setup_color
-  command_exists npm || {
-    error "npm is not installed"
+  command_exists bumpversion || {
+    error "bumpversion is not installed, please install with command 'pip/pip3 install --upgrade bumpversion'"
     exit 1
 	}
-  init_config
   case "$1" in
     $COMMAND_COMMIT ) commit "$2";;
     $COMMAND_INIT ) init_project ;;

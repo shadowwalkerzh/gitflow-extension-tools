@@ -93,6 +93,23 @@
 #### How to Install with One Command?
 - `curl "https://raw.githubusercontent.com/shadowwalkerzh/gitflow-extension-tools/master/gitflow-python/gffpy.sh" > ~/gffpy.sh && chmod +x ~/gffpy.sh && ln -sfn ~/gffpy.sh /usr/local/bin/gffpy`
 
+#### Configuration for python project
+- install the latest version of bumpversion: `pip install --upgrade bumpversion`
+- add file `__version__.py` in root path of the project to manage version, `__version__.py`:
+```
+VERSION = '0.0.1'
+```
+- add bumpversion config file with name `.bumpversion.cfg`:
+```
+[bumpversion]
+current_version = 0.0.1
+commit = True
+tag = True
+
+[bumpversion:file:__version__.py]
+
+```
+
 #### How to use `gffpy` to mange your python project version?
 
 - ask for help: `gffpy -h`

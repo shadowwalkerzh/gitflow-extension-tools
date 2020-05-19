@@ -13,6 +13,8 @@
 
 #### How to use `gffn` to mange your node project version?
 
+> **Have to checkout to the specific feature/release/hotfix branch before execute finish command**
+
 - ask for help: `gffn -h`
 
 - manage your feature version
@@ -149,6 +151,9 @@ tag = True
     - commit changes
 
 #### What will it do when finishing a new branch(feature/release/hotfix)?
+
+> **Have to checkout to the specific feature/release/hotfix branch before execute finish command**
+
 - feature
     - validate current feature branch
     - merge to develop branch

@@ -95,7 +95,7 @@ get_current_branch() {
 }
 
 get_current_version() {
-  current_version=$(head -n 1 __version__.py | cut -d '=' -f 2 | xargs)
+  current_version=$(grep "current_version" .bumpversion.cfg | cut -d '=' -f 2 | xargs)
   echo "current version is: $current_version"
 }
 
